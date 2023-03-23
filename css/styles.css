@@ -12,11 +12,79 @@
   --color-light-slate: #8e8f99;
 }
 
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding-left: 0;
+}
+
 body {
   font-family: var(--font-primary);
   color: var(--color-slate-primary);
   background-color: var(--color-white-main);
 }
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/** .container {} */
+.container {
+  max-width: 1158px;
+  padding: 0 15px;
+  margin: 0 auto;
+  outline: 2px solid red;
+}
+
+/* 
+?? .visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+
+?? border:1px solid #E7E9FC;
+?? border-top: none
+
+
+.container {
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+  outline: 2px solid red;
+}
+container { 
+  max-width: 1158px 
+  padding: 0 15px; 
+  margin: 0 auto; }
+ширина контетної частини(1128px) + падінги по боках(15px) = 1158px 
+  ?? flex-basis або width: 
+  ?? calc( (ширина батьківського елемента - 
+  ?? кількість проміжків * марджин елемента) / 
+  ?? кількість наших елементів в рядку)
+
+  */
 
 .list {
   list-style: none;
@@ -26,7 +94,7 @@ body {
   text-decoration: none;
 }
 
-.address {
+address {
   font-style: normal;
 }
 .address-link {
@@ -34,6 +102,9 @@ body {
   letter-spacing: 0.02em;
   color: inherit;
 }
+
+/*?? display: block */
+/*?? кнопка не flex, a inline-blok */
 
 .modal-btn {
   font-family: inherit;
@@ -44,7 +115,10 @@ body {
   align-items: center;
   letter-spacing: 0.04em;
   cursor: pointer;
+  display: block;
+  margin: 0 auto;
 }
+
 .modal-btn-hero {
   background-color: var(--color-iris-brand);
   color: var(--color-white-main);
@@ -70,8 +144,10 @@ body {
 .main-title {
   font-size: 56px;
   line-height: 1.07;
+  width: 496px;
   text-align: center;
   letter-spacing: 0.02em;
+  margin-bottom: 48px;
 }
 /* <<<<<<<<<<<<<<<<<< Section Title */
 .section-title {
@@ -80,6 +156,7 @@ body {
   text-align: center;
   letter-spacing: 0.02em;
   text-transform: capitalize;
+  margin-bottom: 72px;
 }
 /* <<<<<<<<<<<<<<<<<< Section Subtitle */
 .section-subtitle {
@@ -125,9 +202,12 @@ body {
   color: var(--color-ocean-pressed);
 }
 
-/*TODO 
-.page-header {
+.header {
+  padding-top: 24px;
+  padding-bottom: 24px;
 }
+/*TODO 
+
 .page-nav {
 }
 .menu {
@@ -140,15 +220,25 @@ body {
 /* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< HERO */
 .hero {
   background-color: var(--color-navy-blue-secondary);
+  padding-top: 188px;
+  padding-bottom: 188px;
 }
 
 /* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< COMPANY ADVANTAGES */
-
+.advantages {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
 /* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< COMPANY PRODUCTS */
+.products {
+  padding-bottom: 120px;
+}
 
 /* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< COMPANY TEAM */
 .team {
   background-color: var(--color-cloud);
+  padding-top: 120px;
+  padding-bottom: 120px;
 }
 .team-list {
   background-color: var(--color-white-main);
@@ -176,4 +266,6 @@ body {
 }
 .footer {
   background-color: var(--color-navy-blue-secondary);
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
