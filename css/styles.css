@@ -48,8 +48,7 @@ img {
   outline: 2px solid red;
 }
 
-/* 
-?? .visually-hidden {
+.visually-hidden {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -61,29 +60,10 @@ img {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-
-
+/* 
+?? 
 ?? border:1px solid #E7E9FC;
 ?? border-top: none
-
-
-.container {
-  width: 1200px;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin: 0 auto;
-  outline: 2px solid red;
-}
-container { 
-  max-width: 1158px 
-  padding: 0 15px; 
-  margin: 0 auto; }
-ширина контетної частини(1128px) + падінги по боках(15px) = 1158px 
-  ?? flex-basis або width: 
-  ?? calc( (ширина батьківського елемента - 
-  ?? кількість проміжків * марджин елемента) / 
-  ?? кількість наших елементів в рядку)
-
   */
 
 .list {
@@ -96,6 +76,7 @@ container {
 
 address {
   font-style: normal;
+  margin-left: auto;
 }
 .address-link {
   line-height: 1.5;
@@ -103,29 +84,32 @@ address {
   color: inherit;
 }
 
-/*?? display: block */
-/*?? кнопка не flex, a inline-blok */
-
 .modal-btn {
   font-family: inherit;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
-  display: flex;
-  align-items: center;
   letter-spacing: 0.04em;
   cursor: pointer;
   display: block;
   margin: 0 auto;
+  border-radius: 4px;
 }
 
 .modal-btn-hero {
+  min-width: 169px;
+  height: 56px;
+  padding: 16px 32px;
   background-color: var(--color-iris-brand);
   color: var(--color-white-main);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-color: transparent;
 }
 .modal-btn:is(:hover, :focus) {
   background-color: var(--color-ocean-pressed);
   color: var(--color-white-main);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 /* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< COMPONENTS COLOR */
@@ -141,14 +125,17 @@ address {
 
 /* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< COMPONENTS STYLE */
 /* <<<<<<<<<<<<<<<<<< Main Title */
+/* ??  max-width: 496px; */
 .main-title {
   font-size: 56px;
   line-height: 1.07;
-  width: 496px;
-  text-align: center;
   letter-spacing: 0.02em;
-  margin-bottom: 48px;
+  width: 496px;
+  margin: 0 auto 48px;
+  text-align: center;
+  display: flex;
 }
+
 /* <<<<<<<<<<<<<<<<<< Section Title */
 .section-title {
   font-size: 36px;
@@ -164,6 +151,7 @@ address {
   font-size: 20px;
   line-height: 1.2;
   letter-spacing: 0.02em;
+  margin-bottom: 8px;
 }
 /* <<<<<<<<<<<<<<<<<< Basic Text */
 .body-text-style {
@@ -179,6 +167,7 @@ address {
   font-weight: 800;
   font-size: 18px;
   line-height: 1.17;
+  margin-right: 76px;
   display: flex;
   align-items: center;
   letter-spacing: 0.03em;
@@ -206,16 +195,27 @@ address {
   padding-top: 24px;
   padding-bottom: 24px;
 }
-/*TODO 
+
+header .container {
+  display: flex;
+}
 
 .page-nav {
+  display: flex;
 }
-.menu {
+.menu-list {
+  display: flex;
+  gap: 40px;
 }
+.contact-list {
+  display: flex;
+  gap: 40px;
+}
+
+/*TODO 
 .menu-item {
 }
-.contact {
-} */
+*/
 
 /* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< HERO */
 .hero {
@@ -229,6 +229,15 @@ address {
   padding-top: 120px;
   padding-bottom: 120px;
 }
+
+.advantages-list {
+  display: flex;
+  gap: 24px;
+}
+.advantages-item {
+  width: calc((100% - 72px) / 4);
+}
+
 /* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< COMPANY PRODUCTS */
 .products {
   padding-bottom: 120px;
@@ -240,19 +249,39 @@ address {
   padding-top: 120px;
   padding-bottom: 120px;
 }
-.team-list {
+.team-item {
   background-color: var(--color-white-main);
+  text-align: center;
+  width: calc((100% - 72px) / 4);
+}
+
+.team-list {
+  display: flex;
+  gap: 24px;
+}
+
+.team-item-info {
+  padding: 32px 16px;
 }
 
 /** <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< PORTFOLIO */
-
 .modal-btn-filter {
+  padding: 12px 24px;
   background-color: var(--color-cloud);
   color: var(--color-iris-brand);
+  border: 1px solid #e7e9fc;
 }
+
+/*?? .portfolio-item-info {
+  padding: 32px auto 32px 16px;
+} */
+
 /*TODO 
+portfolio-list {
+}
 .portfolio-link {
 }
+
 .portfolio {
 } */
 .portfolio-text {
@@ -261,11 +290,15 @@ address {
 
 /* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< FOOTER */
 
-.logo-studio-footer {
-  color: var(--color-cloud);
-}
 .footer {
   background-color: var(--color-navy-blue-secondary);
   padding-top: 100px;
   padding-bottom: 100px;
+}
+.logo-studio-footer {
+  color: var(--color-cloud);
+}
+.footer-text {
+  width: 264px;
+  margin-top: 16px;
 }
